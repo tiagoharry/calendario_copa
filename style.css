@@ -37,6 +37,14 @@ header{
     text-align: center;
 }
 
+header img {
+    width: 210px;
+}
+
+header {
+    color: white;
+}
+
 #cards{
     display:flex;
     flex-direction: column;

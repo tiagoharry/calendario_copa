@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --card-title-color: #746615;
+   
+    --card-color-border: #F7DD43;
+   
+}
+
+body.blue {
+    --card-title-color: rgba(51, 138, 243, 1);
+    --card-color-border: rgba(51, 138, 243, 1);
+}
+
+body{
+    background-color: #121214;
+    background-image: url(./assets/bg.svg);
+    background-position-x: center;
+    background-position-y: -715px; 
+}
+
+body *{
+    font-family: 'Roboto', sans-serif;
+}
+
+#app{
+    width: fit-content;
+    margin: 52px auto;
+}
+
+header{
+    margin-bottom: 63px;
+    text-align: center;
+}
+
+#cards{
+    display:flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card{
+    background-color:#1D1C19;
+    padding: 32px 23px;
+    text-align: center;
+    border-bottom: 1px solid var(--card-color-border);
+    border-radius: 6px;
+    animation: appear .3s forwards;
+    opacity: 0;
+}
+
+.card h2{
+    border: 1px solid var(--card-title-color);
+    border-radius: 6px;
+    color: #F7DD43;
+    padding: 8px 16px;
+    margin-bottom: 53px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-inline: auto;
+    font-weight: 700;
+}
+
+.card h2 span{
+    color: #E1E1E6;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.card ul{
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.card ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.card ul li + li{
+    border-top: 1px solid rgba(50, 50, 56, 1);
+    padding-top: 24px;
+}
+
+.card ul li strong{
+    color: #E1E1E6;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+}
+
+.card ul li strong:hover,
+.card ul li img:hover{
+    transform: scale(1.1);
+}
+
+.card ul li strong,
+.card ul li img{
+   transition: transform 0.3s;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px){
+    #cards {
+        max-width: 650px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card ul li{
+        gap: 32px;
+    }
+}
